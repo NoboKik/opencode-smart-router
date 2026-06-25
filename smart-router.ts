@@ -29,7 +29,7 @@ function rot() {
 
 function isErrorEvent(s: string): boolean {
   if (s.includes('"type":"session.error"')) {
-    return /"statusCode":(401|429)|insufficient_quota|unauthorized|Invalid API key|free usage|quota|Free usage exceeded/i.test(s);
+    return /"statusCode":(401|429)|insufficient_quota|unauthorized|Invalid API key|usage|quota/i.test(s);
   }
   if (/usage|subscribe to Go|No payment method/i.test(s)) return true;
   return false;
